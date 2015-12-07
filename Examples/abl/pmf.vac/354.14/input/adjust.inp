@@ -1,0 +1,33 @@
+* adjust wall 
+* 
+
+bomlev -5
+read psf card name solvated.psf xplor
+read coor pdb name step12_equilibration.pdb resid
+
+! density
+define upper sele segid wall .and. prop z .gt. 0 end
+coor stat sele upper end
+calc zmax = ?zmin - 2
+
+define lower sele segid wall .and. prop z .lt. 0 end
+coor stat sele lower end
+calc zmin = ?zmax + 2
+
+calc vol = 35 * 37 * (@zmax - @zmin)
+define water sele type oh2 .and. resn tip3 .and. ( prop z .lt. @zmax .and. prop z .gt. @zmin ) end
+set nwater = ?nsel
+calc density = @vol / 1000.0 * 33.3679
+
+define upper sele segid wall .and. prop z .gt. 0 end
+coor trans zdir 0.05 sele upper end
+
+define lower sele segid wall .and. prop z .lt. 0 end
+coor trans zdir -0.05 sele lower end
+
+scalar wmain set zero
+scalar wmain set 1 sele segid wall end
+
+write coor pdb name step12_adjusted.pdb
+
+stop

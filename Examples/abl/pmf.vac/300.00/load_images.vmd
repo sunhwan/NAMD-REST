@@ -1,0 +1,80 @@
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/0/dist.job3.0.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 0"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/1/dist.job3.1.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 1"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/2/dist.job3.2.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 2"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/3/dist.job3.3.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 3"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/4/dist.job3.4.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 4"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/5/dist.job3.5.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 5"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/6/dist.job3.6.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 6"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/7/dist.job3.7.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 7"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/8/dist.job3.8.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 8"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/9/dist.job3.9.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 9"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/10/dist.job3.10.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 10"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/11/dist.job3.11.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 11"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/12/dist.job3.12.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 12"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/13/dist.job3.13.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 13"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/14/dist.job3.14.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 14"]
+mol delrep 0 top
+
+mol new input/solvated.psf type psf first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol addfile output/15/dist.job3.15.coor type namdbin first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
+mol rename top [format "Image 15"]
+mol delrep 0 top

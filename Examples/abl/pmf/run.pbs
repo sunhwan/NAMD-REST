@@ -1,0 +1,33 @@
+#!/bin/csh
+#PBS -l nodes=32:ppn=8
+#PBS -o ./error/out
+#PBS -e ./error/err
+#PBS -l walltime=8:00:00
+#PBS -N host
+#PBS -A entropy
+
+cd $PBS_O_WORKDIR
+
+set NODELIST = namd2.nodelist
+set NODES    = `cat $PBS_NODEFILE | sort -u `
+
+echo group main > $NODELIST
+foreach node ( $NODES )
+    echo host $node >> $NODELIST
+end
+
+@ pcnt = $icnt - 1
+@ pstep = 5000 * $icnt
+@ istep = $pstep + 5000
+@ ncnt = $icnt + 1
+
+sed -e 's/$pcnt/'$pcnt'/g' -e 's/$pstep/'$pstep'/g' -e 's/$istep/'$istep'/g' base.conf > job$icnt.conf
+#python stage.py $pcnt
+
+if ( $ncnt > 5 ) exit;
+qsub -W depend=afterok:$PBS_JOBID -v icnt=$ncnt run.pbs
+
+set namddir = /home/sunhwan/database/REST/NAMD_Develop_Source/Linux-x86_64-icc
+#mpdboot -n 8 -f $PBS_NODEFILE
+mpirun -machinefile $PBS_NODEFILE -np 256 $namddir/namd2 +replicas 32 job$icnt.conf +stdout output/%d/job$icnt.%d.log
+

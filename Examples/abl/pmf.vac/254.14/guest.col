@@ -1,0 +1,30 @@
+#
+# protein backbone/sidechain RMSD restraint
+#
+
+Colvarstrajfrequency    20
+#Colvarsrestartfrequency 100
+
+colvar {
+   name pinZ
+
+   width 1
+
+   distanceZ {
+      ref {
+         dummyatom ( 0.0, 0.0, 15.0 )
+      }
+      main {
+         atomnumbers { 8485 }
+      }
+      axis (0,0,1)
+   }
+}
+
+harmonic {
+   name pinZ
+   colvars pinZ
+   forceConstant 4.0
+   centers 5.0
+}
+

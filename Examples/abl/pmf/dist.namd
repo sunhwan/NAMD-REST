@@ -1,0 +1,139 @@
+##################################################
+# PRODUCTION MD
+##################################################
+
+
+##################################################
+# MD SECTION
+##################################################
+
+
+# NUMBER OF MD-STEPS
+
+numsteps             100000
+
+
+# TOPOLOGY
+
+structure            input/separation.psf
+
+
+# FORCE FIELD
+
+parameters           par_all27_prot_lipid.prm
+paraTypeCharmm       on
+
+
+# 1-4 TERMs
+
+exclude              scaled1-4
+1-4scaling           1.0
+
+
+# INPUT FILES
+
+#coordinates          separation.pdb
+#coordinates       equilibrate.coor
+#velocities        equilibrate.vel 
+
+# EXTENDED SYSTEM
+
+#ExtendedSystem       equilibrate.xsc
+
+
+# OUTPUT FILES
+
+binaryoutput         no  
+binaryrestart        yes
+
+#outputname           r-1
+#restartname          r-1
+
+
+# DCD FILE
+
+#dcdFile              r-1.dcd
+dcdUnitCell          yes
+
+
+# FREQUENCY FOR DUMPING OUTPUT DATA
+
+#outputenergies       500
+#outputtiming         500
+#outputpressure       500
+#restartfreq          500 
+#XSTFreq              500 
+#dcdFreq              500
+
+
+# CUT-OFFs
+
+hgroupcutoff         2.8
+switching            on
+switchdist           10.0
+cutoff               12.0
+pairlistdist         14.0
+
+
+# WRAPPING
+
+wrapAll              on 
+
+
+# CONSTANT-T
+
+langevin             on
+#langevintemp         300.0
+langevindamping      1.0 
+
+
+# CONSTANT-P
+
+langevinpiston       on 
+langevinpistontarget 1 
+langevinpistonperiod 100
+langevinpistondecay  100
+langevinpistontemp   300
+
+strainrate           0.  0.  0.
+usegrouppressure     yes
+
+useflexiblecell      no  
+
+
+# PME
+
+PME                  yes
+PMETolerance         10e-6
+PMEInterpOrder       4
+PMEGridSpacing       1
+
+
+# MULTIPLE TIME-STEP PROPAGATOR
+
+timestep             2.0
+
+fullelectfrequency   2
+nonbondedfreq        1
+
+
+# SHAKE/RATTLE
+
+rigidbonds           all     
+rigidtolerance       0.00001
+rigiditerations      400
+
+
+# PARALLELISM
+
+stepspercycle        20
+splitpatch           hydrogen
+margin               2.0
+
+
+##################################################
+# ABF SECTION
+##################################################
+
+colvars              on
+colvarsConfig        guest.in

@@ -1,0 +1,352 @@
+Colvarstrajfrequency    100
+Colvarsrestartfrequency 100
+
+
+#############################################################
+# r PMF
+# ALL OTHER COLVARS RESTRAINED
+#############################################################
+# COLVARS DEFINITIONS
+#############################################################
+
+
+colvar {
+   name r
+
+   width 1.0
+
+   lowerboundary 18.0
+   upperboundary 40.0
+
+   lowerwallconstant 100.0
+   upperwallconstant 100.0
+
+   distance {
+      forceNoPBC     yes
+      group1 {
+         atomnumbers { 367 368 369 370 384 385 }
+      }
+      group2 {
+         atomnumbers { 949 950 951 952 958 959 }
+      }
+   }
+}
+
+
+colvar {
+   name Theta        
+
+   width 1.0
+
+   lowerboundary   0.0
+   upperboundary 180.0
+
+   lowerwallconstant  0.5
+   upperwallconstant  0.5
+
+   angle {
+      group1 {
+         atomnumbers { 367 368 369 370 384 385 }
+      }
+      group2  {
+         atomnumbers { 949 950 951 952 958 959 }
+      }
+      group3  {
+         atomnumbers { 917 918 919 920 926 927 }
+      }
+   }
+}
+
+
+colvar {
+   name Phi
+
+   width 1.0
+
+   lowerboundary -180.0
+   upperboundary  180.0
+
+   lowerwallconstant  0.5
+   upperwallconstant  0.5
+
+   dihedral {
+      group1 {
+         atomnumbers { 367 368 369 370 384 385 }
+      }
+      group2  {
+         atomnumbers { 949 950 951 952 958 959 }
+      }
+      group3  {
+         atomnumbers { 917 918 919 920 926 927 }
+      }
+      group4  {
+         atomnumbers { 893 894 895 896 901 902 }
+      }
+   }
+}
+
+
+colvar {
+   name Psi
+
+   width 1.0
+ 
+   lowerboundary -180.0
+   upperboundary  180.0     
+
+   lowerwallconstant  0.5
+   upperwallconstant  0.5
+
+   dihedral {
+      group1 {
+         atomnumbers { 575 576 577 578 588 589 }
+      }
+      group2  {
+         atomnumbers { 367 368 369 370 384 385 }
+      }
+      group3  {
+         atomnumbers { 949 950 951 952 958 959 }
+      }
+      group4  {
+         atomnumbers { 917 918 919 920 926 927 }
+      }
+   }
+}
+ 
+
+colvar {
+   name theta        
+
+   width 1.0
+
+   lowerboundary   0.0
+   upperboundary 180.0
+
+   lowerwallconstant  0.5
+   upperwallconstant  0.5
+
+   angle {
+      group1 {
+         atomnumbers { 949 950 951 952 958 959 }
+      }
+      group2  {
+         atomnumbers { 367 368 369 370 384 385 }
+      }
+      group3  {
+         atomnumbers { 575 576 577 578 588 589 }
+      }
+   }
+}
+
+
+colvar {
+   name phi
+
+   width 1.0
+
+   lowerboundary -180.0
+   upperboundary  180.0
+
+   lowerwallconstant  0.5
+   upperwallconstant  0.5
+
+   dihedral {
+      group1 {
+         atomnumbers { 949 950 951 952 958 959 }
+      }
+      group2  {
+         atomnumbers { 367 368 369 370 384 385 }
+      }
+      group3  {
+         atomnumbers { 575 576 577 578 588 589 }
+      }
+      group4  {
+         atomnumbers { 691 692 693i 694 695 696 697 }
+      }
+   }
+}
+
+
+colvar {
+  name RMSD
+
+  width 1.0  
+
+  lowerboundary 0.0
+  upperboundary 5.0
+
+  lowerwallconstant 100.0
+  upperwallconstant 100.0
+
+  rmsd {
+    atoms {
+      atomnumbers {  887  888  889  890  891  892  893  894  895  896  
+                     897  898  899  900  901  902  903  907  908  909  
+                     910  911  915  916  928  929  930  931  932  933  
+                     934  947  948  960  964  965  966  967  968  972  
+                     973  974  978  979  980  981  982  986  987  988  
+                     992  993  994  995  996 1000 1001 1002 1006 1007 
+                    1008 1009 1010 1014 1015 1016 1019 1023 1024 1025 
+                    1026 1027 }
+    }
+    refpositionsfile input/x-ray.pdb
+  }
+} 
+
+
+
+#############################################################
+# RESTRAINTS AND PMF
+#############################################################
+
+
+#############################################################
+harmonic {
+   name dist
+   colvars        r
+   forceConstant  5.0  
+   centers        21.0
+}
+#############################################################
+
+
+harmonic {
+   colvars        Theta
+   forceConstant  0.1  
+   centers        102.0
+}
+
+
+harmonic {
+   colvars        Phi   
+   forceConstant  0.1  
+   centers        -7.0 
+}
+
+
+harmonic {
+   colvars        Psi   
+   forceConstant  0.1  
+   centers        23.0
+}
+
+
+harmonic {
+   colvars        theta
+   forceConstant  0.1  
+   centers        40.0
+}
+
+
+harmonic {
+   colvars        phi   
+   forceConstant  0.1  
+   centers        -81.0
+}
+
+
+harmonic {
+   colvars        RMSD
+   forceConstant  10.0  
+   centers        0.0  
+}
+
+
+#############################################################
+# POSITIONAL AND ORIENTATIONAL RESTRAINTS
+#############################################################
+
+
+colvar {
+  name Omega
+
+  orientation {
+    atoms { 
+      atomnumbers {     1    5   15   16   17   19   34   35   36   38
+                       54   55   56   58   70   71   72   74   80   81
+                       82   84   99  100  101  103  120  121  122  124
+                      132  133  134  136  152  153  154  156  168  169
+                      170  172  178  179  180  182  189  190  191  193
+                      196  197  198  200  208  209  210  212  222  223
+                      224  226  236  237  238  240  255  256  257  259
+                      266  267  268  270  285  286  287  289  299  300
+                      301  303  321  322  323  325  328  329  330  332
+                      343  344  345  347  365  366  367  369  384  385
+                      386  388  408  409  410  412  424  425  426  428
+                      443  444  445  447  450  451  452  454  471  472
+                      473  475  485  486  487  489  502  503  504  506
+                      516  517  518  520  523  524  525  527  538  539
+                      540  542  562  563  564  566  573  574  575  577
+                      588  589  590  592  598  599  600  602  615  616
+                      617  619  629  630  631  633  651  652  653  655
+                      665  666  667  669  672  673  674  676  689  690
+                      691  693  696  697  698  700  720  721  722  724
+                      736  737  738  742  750  751  752  754  761  762
+                      763  765  775  776  777  779  796  797  798  800
+                      815  816  817  819  829  830  831  835  843  844
+                      845  847  859  860  861  863  873  874  875  878
+                      880  }
+    }
+    refPositionsFile  input/protein.pdb
+    refPositionsCol   B   
+  }
+}
+
+
+colvar {
+   name Pin
+
+   width 1.0
+
+   lowerboundary -1.0
+   upperboundary  1.0
+
+   lowerwallconstant 100.0
+   upperwallconstant 100.0
+
+   distance { 
+      group1 {     
+           dummyatom  (0, 0, 0)
+              }
+       group2 {
+      atomnumbers {     1    5   15   16   17   19   34   35   36   38
+                       54   55   56   58   70   71   72   74   80   81
+                       82   84   99  100  101  103  120  121  122  124
+                      132  133  134  136  152  153  154  156  168  169
+                      170  172  178  179  180  182  189  190  191  193
+                      196  197  198  200  208  209  210  212  222  223
+                      224  226  236  237  238  240  255  256  257  259
+                      266  267  268  270  285  286  287  289  299  300
+                      301  303  321  322  323  325  328  329  330  332
+                      343  344  345  347  365  366  367  369  384  385
+                      386  388  408  409  410  412  424  425  426  428
+                      443  444  445  447  450  451  452  454  471  472
+                      473  475  485  486  487  489  502  503  504  506
+                      516  517  518  520  523  524  525  527  538  539
+                      540  542  562  563  564  566  573  574  575  577
+                      588  589  590  592  598  599  600  602  615  616
+                      617  619  629  630  631  633  651  652  653  655
+                      665  666  667  669  672  673  674  676  689  690
+                      691  693  696  697  698  700  720  721  722  724
+                      736  737  738  742  750  751  752  754  761  762
+                      763  765  775  776  777  779  796  797  798  800
+                      815  816  817  819  829  830  831  835  843  844
+                      845  847  859  860  861  863  873  874  875  878
+                      880  }
+            }
+        }
+    }
+
+
+harmonic {
+   colvars         Omega
+   forceConstant   100.0
+   centers         ( 1.0, 0.0, 0.0, 0.0 )
+}
+
+
+harmonic {
+   colvars         Pin
+   forceConstant   100.0
+   centers         0.0
+}

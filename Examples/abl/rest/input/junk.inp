@@ -1,0 +1,16 @@
+* mark spt atoms 
+*
+
+bomlev -5
+read psf card name separation.psf xplor
+read coor pdb name separation.pdb resid
+
+scalar wmain set zero
+scalar wmain set 1 sele ( .byres. ( segid sh3d .and. ( segid ppro .around. 4 ) ) ) -
+                        .and. .not. ( type c .or. type ca .or. type o .or. type n ) end
+coor stat sele .byres. prop wmain .eq. 1 .and. type ca end
+
+write coor pdb name separation.spt.pdb
+
+stop
+

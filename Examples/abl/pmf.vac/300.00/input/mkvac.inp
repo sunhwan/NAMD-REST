@@ -1,0 +1,15 @@
+* adjust wall 
+* 
+
+read rtf card name top.rtf
+read para card name par_water_ions.prm
+
+read psf card name solvated.psf xplor
+read coor pdb name step12_equilibration.pdb resid
+
+delete atom sele resn tip3 end
+write psf card name vac.psf xplor
+
+write coor pdb name vac.pdb
+
+stop

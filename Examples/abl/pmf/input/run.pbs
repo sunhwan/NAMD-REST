@@ -1,0 +1,21 @@
+#!/bin/csh
+#PBS -l nodes=2:ppn=8
+#PBS -o ./error/out
+#PBS -e ./error/err
+#PBS -l walltime=8:00:00
+#PBS -N host
+#PBS -A entropy
+
+cd $PBS_O_WORKDIR
+
+set namddir = /home/sunhwan/database/REST/NAMD_Develop_Source/Linux-x86_64-icc
+@ x = 20 + $icnt - 1
+@ pcnt = $icnt - 1
+sed -e "s/r-center/$x/g" r-base.in > r-$icnt.in
+sed -e "s/r-1/r-$icnt/g" -e "s/equilibrate/r-$pcnt/g" r-base.namd > r-$icnt.namd
+#mpdboot -n 8 -f $PBS_NODEFILE
+mpirun -machinefile $PBS_NODEFILE -np 16 $namddir/namd2 r-$icnt.namd > r-$icnt.out
+
+@ icnt = $icnt + 1
+if ( $icnt > 18 ) exit;
+qsub -v icnt=$icnt run.pbs
