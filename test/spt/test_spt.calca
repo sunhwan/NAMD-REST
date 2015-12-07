@@ -1,0 +1,15 @@
+e_sol = 67.9155
+v_sol = 6.1664
+
+e_water = 0.0856
+v_water = -0.0048
+
+e_inter = 68.3015-e_sol-e_water => 0.3004
+v_inter = 59.8144-v_sol-v_water => 53.6528
+
+
+e_sol * 0.5 + e_inter * 0.5 + e_water => 34.1936
+v_sol * 0.5 + v_inter * 0.5 + v_water => 29.9048
+
+e_sol + e_inter + e_water => 68.3015
+

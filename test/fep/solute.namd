@@ -1,0 +1,87 @@
+# shared simulation options for Hamiltonian-exchange
+
+timestep                2.0
+
+structure               ../solute.psf
+coordinates             ../solute.pdb
+outputname              spt_test
+temperature             0
+
+parameters              ../toppar/par_all36_carb.prm
+parameters              ../toppar/toppar_water_ions.prm
+paraTypeCharmm          on
+
+#binCoordinates equ_restart.coor
+#extendedSystem equ_restart.xsc 
+
+#twoAwayX        yes
+#twoAwayY        yes
+#twoAwayZ        yes
+
+# PME
+PME                     yes
+PMEGridSpacing          1.0
+
+# Periodic Boundary Conditions
+cellBasisVector1     69.0    0.   0.
+cellBasisVector2     0.    69.0   0.
+cellBasisVector3     0.    0.     69.0
+cellOrigin           0.0   0.0   0.0
+
+wrapAll                 on
+
+useGroupPressure     yes
+useFlexibleCell      no # allow anisotropic cell fluctuations?
+useConstantRatio     no
+useConstantArea      no
+
+langevin                on
+langevinTemp            300.0
+langevinDamping         1.0
+LangevinPiston          on
+LangevinPistonTarget    1
+LangevinPistonPeriod    100
+LangevinPistonDecay     100
+LangevinPistonTemp      300
+
+switching               on
+switchdist              10.0
+vdwForceSwitching   yes;               # New option for force-based switching of vdW
+                                       # if both switching and vdwForceSwitching are on CHARMM force
+cutoff                  14.0
+pairlistdist            16.0
+stepspercycle           20
+margin                  5.0
+exclude                 scaled1-4
+1-4scaling              1.0
+
+#fullElectFrequency      4
+#nonbondedFreq           2
+
+commotion               no
+
+rigidbonds             all 
+
+
+tclforces on
+source print.tcl
+
+alch on
+alchType fep
+alchCol O
+alchVdwLambdaEnd 1.0
+alchVdwShiftCoeff 0.0
+alchDecouple on
+
+alchLambda 1.0
+alchLambda2 1.0
+
+run 0
+
+alchLambda 0.5
+alchLambda2 0.5
+run 0
+
+alchLambda 0.0
+alchLambda2 0.0
+run 0

@@ -1,0 +1,209 @@
+Charm++: standalone mode (not using charmrun)
+Converse/Charm++ Commit ID: v6.6.1-rc1-1-gba7c3c3-namd-charm-6.6.1-build-2014-Dec-08-28969
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 1 unique compute nodes (8-way SMP).
+Charm++> cpu topology info is gathered in 0.003 seconds.
+Info: NAMD CVS-2015-03-03 for MacOSX-x86_64-multicore
+Info: 
+Info: Please visit http://www.ks.uiuc.edu/Research/namd/
+Info: for updates, documentation, and support information.
+Info: 
+Info: Please cite Phillips et al., J. Comp. Chem. 26:1781-1802 (2005)
+Info: in all publications reporting results obtained with NAMD.
+Info: 
+Info: Based on Charm++/Converse 60601 for multicore-darwin-x86_64
+Info: Built Fri Mar 13 10:48:33 CDT 2015 by sunhwan on peter.mcs.anl.gov
+Info: 1 NAMD  CVS-2015-03-03  MacOSX-x86_64-multicore  1    peter.mcs.anl.gov  sunhwan
+Info: Running on 1 processors, 1 nodes, 1 physical nodes.
+Info: CPU topology information available.
+Info: Charm++/Converse parallel runtime startup completed at 0.0052259 s
+Info: 2420.07 MB of memory in use based on ps
+Info: Configuration file is solute.namd
+Info: Working in the current directory /Users/sunhwan/work/NAMD_REST/test/rest2
+TCL: Suspending until startup complete.
+Warning: The parameter fullElectFrequency now defaults to nonbondedFreq (1) rather than stepsPerCycle.
+Info: SIMULATION PARAMETERS:
+Info: TIMESTEP               2
+Info: NUMBER OF STEPS        0
+Info: STEPS PER CYCLE        20
+Info: PERIODIC CELL BASIS 1  69 0 0
+Info: PERIODIC CELL BASIS 2  0 69 0
+Info: PERIODIC CELL BASIS 3  0 0 69
+Info: PERIODIC CELL CENTER   0 0 0
+Info: WRAPPING ALL CLUSTERS AROUND PERIODIC BOUNDARIES ON OUTPUT.
+Info: LOAD BALANCER  Centralized
+Info: LOAD BALANCING STRATEGY  New Load Balancers -- DEFAULT
+Info: LDB PERIOD             4000 steps
+Info: FIRST LDB TIMESTEP     100
+Info: LAST LDB TIMESTEP     -1
+Info: LDB BACKGROUND SCALING 1
+Info: HOM BACKGROUND SCALING 1
+Info: PME BACKGROUND SCALING 1
+Info: MIN ATOMS PER PATCH    40
+Info: INITIAL TEMPERATURE    0
+Info: CENTER OF MASS MOVING INITIALLY? NO
+Info: DIELECTRIC             1
+Info: EXCLUDE                SCALED ONE-FOUR
+Info: 1-4 ELECTROSTATICS SCALED BY 1
+Info: MODIFIED 1-4 VDW PARAMETERS WILL BE USED
+Info: NO DCD TRAJECTORY OUTPUT
+Info: NO EXTENDED SYSTEM TRAJECTORY OUTPUT
+Info: NO VELOCITY DCD OUTPUT
+Info: NO FORCE DCD OUTPUT
+Info: OUTPUT FILENAME        solute
+Info: BINARY OUTPUT FILES WILL BE USED
+Info: NO RESTART FILE
+Info: SWITCHING ACTIVE
+Info: VDW FORCE SWITCHING ACTIVE
+Info: SWITCHING ON           10
+Info: SWITCHING OFF          14
+Info: PAIRLIST DISTANCE      16
+Info: PAIRLIST SHRINK RATE   0.01
+Info: PAIRLIST GROW RATE     0.01
+Info: PAIRLIST TRIGGER       0.3
+Info: PAIRLISTS PER CYCLE    2
+Info: PAIRLISTS ENABLED
+Info: MARGIN                 5
+Info: HYDROGEN GROUP CUTOFF  2.5
+Info: PATCH DIMENSION        23.5
+Info: CROSSTERM ENERGY INCLUDED IN DIHEDRAL
+Info: TIMING OUTPUT STEPS    100
+Info: TCL GLOBAL FORCES ACTIVE
+Info: TCL GLOBAL FORCES SCRIPT INLINED IN CONFIG FILE
+Info: LANGEVIN DYNAMICS ACTIVE
+Info: LANGEVIN TEMPERATURE   300
+Info: LANGEVIN USING BBK INTEGRATOR
+Info: LANGEVIN DAMPING COEFFICIENT IS 1 INVERSE PS
+Info: LANGEVIN DYNAMICS APPLIED TO HYDROGENS
+Info: LANGEVIN PISTON PRESSURE CONTROL ACTIVE
+Info:        TARGET PRESSURE IS 1 BAR
+Info:     OSCILLATION PERIOD IS 100 FS
+Info:             DECAY TIME IS 100 FS
+Info:     PISTON TEMPERATURE IS 300 K
+Info:       PRESSURE CONTROL IS GROUP-BASED
+Info:    INITIAL STRAIN RATE IS 0 0 0
+Info:       CELL FLUCTUATION IS ISOTROPIC
+Info: PARTICLE MESH EWALD (PME) ACTIVE
+Info: PME TOLERANCE               1e-06
+Info: PME EWALD COEFFICIENT       0.219398
+Info: PME INTERPOLATION ORDER     4
+Info: PME GRID DIMENSIONS         72 72 72
+Info: PME MAXIMUM GRID SPACING    1
+Info: Attempting to read FFTW data from FFTW_NAMD_CVS-2015-03-03_MacOSX-x86_64-multicore.txt
+Info: Optimizing 6 FFT steps.  1... 2... 3... 4... 5... 6...   Done.
+Info: Writing FFTW data to FFTW_NAMD_CVS-2015-03-03_MacOSX-x86_64-multicore.txt
+Info: FULL ELECTROSTATIC EVALUATION FREQUENCY      1
+Info: USING VERLET I (r-RESPA) MTS SCHEME.
+Info: C1 SPLITTING OF LONG RANGE ELECTROSTATICS
+Info: PLACING ATOMS IN PATCHES BY HYDROGEN GROUPS
+Info: RIGID BONDS TO HYDROGEN : ALL
+Info:         ERROR TOLERANCE : 1e-08
+Info:          MAX ITERATIONS : 100
+Info: RIGID WATER USING SETTLE ALGORITHM
+Info: RANDOM NUMBER SEED     1433963769
+Info: USE HYDROGEN BONDS?    NO
+Info: COORDINATE PDB         ../solute.pdb
+Info: STRUCTURE FILE         ../solute.psf
+Info: PARAMETER file: CHARMM format! 
+Info: PARAMETERS             ../toppar/par_all36_carb.prm
+Info: PARAMETERS             ../toppar/toppar_water_ions.prm
+Info: USING ARITHMETIC MEAN TO COMBINE L-J SIGMA PARAMETERS
+Info: SUMMARY OF PARAMETERS:
+Info: 148 BONDS
+Info: 414 ANGLES
+Info: 1240 DIHEDRAL
+Info: 13 IMPROPER
+Info: 0 CROSSTERM
+Info: 70 VDW
+Info: 2 VDW_PAIRS
+Info: 0 NBTHOLE_PAIRS
+Info: TIME FOR READING PSF FILE: 0.00202513
+Info: TIME FOR READING PDB FILE: 0.00011301
+Info: 
+Info: ****************************
+Info: STRUCTURE SUMMARY:
+Info: 24 ATOMS
+Info: 24 BONDS
+Info: 42 ANGLES
+Info: 66 DIHEDRALS
+Info: 0 IMPROPERS
+Info: 0 CROSSTERMS
+Info: 0 EXCLUSIONS
+Info: 12 RIGID BONDS
+Info: 60 DEGREES OF FREEDOM
+Info: 12 HYDROGEN GROUPS
+Info: 3 ATOMS IN LARGEST HYDROGEN GROUP
+Info: 12 MIGRATION GROUPS
+Info: 3 ATOMS IN LARGEST MIGRATION GROUP
+Info: TOTAL MASS = 180.158 amu
+Info: TOTAL CHARGE = 7.82311e-08 e
+Info: MASS DENSITY = 0.000910681 g/cm^3
+Info: ATOM DENSITY = 7.30574e-05 atoms/A^3
+Info: *****************************
+Info: 
+Info: Entering startup at 0.043931 s, 2439.52 MB of memory in use
+Info: Startup phase 0 took 0.00393081 s, 2439.52 MB of memory in use
+Info: ADDED 129 IMPLICIT EXCLUSIONS
+Info: Startup phase 1 took 0.00307417 s, 2439.52 MB of memory in use
+Info: NONBONDED TABLE R-SQUARED SPACING: 0.0625
+Info: NONBONDED TABLE SIZE: 769 POINTS
+Info: ABSOLUTE IMPRECISION IN FAST TABLE FORCE: 2.64698e-23 AT 13.9261
+Info: RELATIVE IMPRECISION IN FAST TABLE FORCE: 3.03582e-16 AT 13.9261
+Info: INCONSISTENCY IN FAST TABLE ENERGY VS FORCE: 0.000290477 AT 0.251946
+Info: ABSOLUTE IMPRECISION IN SCOR TABLE FORCE: 4.63221e-23 AT 13.9261
+Info: RELATIVE IMPRECISION IN SCOR TABLE FORCE: 1.36264e-15 AT 13.9261
+Info: INCONSISTENCY IN SCOR TABLE ENERGY VS FORCE: 0.000182292 AT 13.962
+Info: ABSOLUTE IMPRECISION IN VDWA TABLE ENERGY: 1.2326e-32 AT 13.7818
+Info: RELATIVE IMPRECISION IN VDWA TABLE ENERGY: 1.61461e-16 AT 13.9261
+Info: ABSOLUTE IMPRECISION IN VDWA TABLE FORCE: 1.92593e-34 AT 13.9261
+Info: RELATIVE IMPRECISION IN VDWA TABLE FORCE: 3.22715e-16 AT 13.9261
+Info: INCONSISTENCY IN VDWA TABLE ENERGY VS FORCE: 0.0040507 AT 0.251946
+Info: ABSOLUTE IMPRECISION IN VDWB TABLE ENERGY: 1.29247e-26 AT 13.8542
+Info: RELATIVE IMPRECISION IN VDWB TABLE ENERGY: 6.59499e-14 AT 13.9261
+Info: ABSOLUTE IMPRECISION IN VDWB TABLE FORCE: 1.00974e-27 AT 13.9261
+Info: RELATIVE IMPRECISION IN VDWB TABLE FORCE: 6.59236e-16 AT 13.9261
+Info: INCONSISTENCY IN VDWB TABLE ENERGY VS FORCE: 0.00150189 AT 0.251946
+Info: Startup phase 2 took 0.00373983 s, 2440.03 MB of memory in use
+Info: Startup phase 3 took 0.00293922 s, 2440.03 MB of memory in use
+Info: Startup phase 4 took 0.00342679 s, 2440.03 MB of memory in use
+Info: Startup phase 5 took 0.0031321 s, 2440.03 MB of memory in use
+Info: PATCH GRID IS 1 (PERIODIC) BY 1 (PERIODIC) BY 1 (PERIODIC)
+Info: PATCH GRID IS 1-AWAY BY 1-AWAY BY 1-AWAY
+Info: REMOVING COM VELOCITY 0 0 0
+Info: LARGEST PATCH (0) HAS 24 ATOMS
+Info: TORUS A SIZE 1 USING 0
+Info: TORUS B SIZE 1 USING 0
+Info: TORUS C SIZE 1 USING 0
+Info: TORUS MINIMAL MESH SIZE IS 1 BY 1 BY 1
+Info: Placed 100% of base nodes on same physical node as patch
+Info: Startup phase 6 took 0.00300694 s, 2440.03 MB of memory in use
+Info: PME using 1 and 1 processors for FFT and reciprocal sum.
+Info: PME GRID LOCATIONS: 0
+Info: PME TRANS LOCATIONS: 0
+Info: PME USING 1 GRID NODES AND 1 TRANS NODES
+Info: Optimizing 4 FFT steps.  1... 2... 3... 4...   Done.
+Info: Startup phase 7 took 0.003824 s, 2441.49 MB of memory in use
+Info: Startup phase 8 took 0.00289702 s, 2441.49 MB of memory in use
+LDB: Central LB being created...
+Info: Startup phase 9 took 0.00290704 s, 2441.49 MB of memory in use
+Info: CREATING 26 COMPUTE OBJECTS
+Info: Startup phase 10 took 0.00332403 s, 2441.49 MB of memory in use
+Info: Startup phase 11 took 0.00351906 s, 2441.49 MB of memory in use
+Info: Startup phase 12 took 0.00302982 s, 2441.74 MB of memory in use
+Info: Finished startup at 0.0866818 s, 2441.74 MB of memory in use
+
+TCL: Running for 0 steps
+TCL: 'xyz'
+ETITLE:      TS           BOND          ANGLE          DIHED          IMPRP               ELECT            VDW       BOUNDARY           MISC        KINETIC               TOTAL           TEMP      POTENTIAL         TOTAL3        TEMPAVG            PRESSURE      GPRESSURE         VOLUME       PRESSAVG      GPRESSAVG
+
+ENERGY:       0         2.5820        14.8672        30.3578         0.0000             67.9155         6.1664         0.0000         0.0000         0.0000            121.8889         0.0000       121.8889       122.0340         0.0000             11.9232        11.7874    328509.0000        11.9232        11.7874
+
+WRITING EXTENDED SYSTEM TO OUTPUT FILE AT STEP 0
+WRITING COORDINATES TO OUTPUT FILE AT STEP 0
+The last position output (seq=-2) takes 0.004 seconds, 2441.742 MB of memory in use
+WRITING VELOCITIES TO OUTPUT FILE AT STEP 0
+The last velocity output (seq=-2) takes 0.004 seconds, 2441.742 MB of memory in use
+====================================================
+
+WallClock: 0.117355  CPUTime: 0.117355  Memory: 2441.742188 MB
+Program finished after 0.121118 seconds.

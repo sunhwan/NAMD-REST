@@ -1,0 +1,42 @@
+* mark spt selected atoms
+*
+
+read rtf card name toppar/top_all36_carb.rtf
+read para card name toppar/par_all36_carb.prm flex
+stream toppar/toppar_water_ions.str
+
+read sequ aglc 1
+gene aglc first none last none setup warn
+
+ic para
+ic seed aglc 1 o5 aglc 1 c1 aglc 1 c2
+ic build
+
+scalar wmain set 0
+scalar wmain set 1 sele segid aglc end
+
+write psf card name solute.psf xplor
+
+write coor pdb name solute.pdb
+
+
+read sequ tip3 2
+generate tip3 first none last none noangle nodihedral
+
+coor set xdir 5 ydir 0 zdir 0 sele type oh2 .and. resi 1 end
+coor set xdir 0 ydir 5 zdir 0 sele type oh2 .and. resi 2 end
+hbuild
+
+write psf card name solute_water.psf xplor
+
+write coor pdb name solute_water.pdb
+
+
+delete atom sele segid aglc end
+
+write psf card name water.psf xplor
+
+write coor pdb name water.pdb
+
+stop
+

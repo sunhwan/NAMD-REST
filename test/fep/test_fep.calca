@@ -1,0 +1,56 @@
+e_sol = 67.9155
+v_sol = 6.1664
+
+e_water = 0.0856
+v_water = -0.0048
+
+e_inter = 68.3015-e_sol-e_water => 0.3004
+v_inter = 59.8144-v_sol-v_water => 53.6528
+
+
+e_sol * 0.5 + e_inter * sqrt(0.5) + e_water => 34.2558
+v_sol * 0.5 + v_inter * sqrt(0.5) + v_water => 41.0167
+
+e_sol + e_inter + e_water => 68.3015
+
+
+
+e_inter_2 = 2.6706
+v_inter_2 = 11.2249
+e_inter_1 = -2.1980
+v_inter_1 = 42.4183
+
+e_water_1 = -0.0005
+v_water_1 = 0.000
+e_water_2 = -0.0005
+v_water_2 = 0.000
+
+
+spt = 1.0
+lambda = 1.0
+e_sol*spt + e_inter_2*sqrt(spt) + (lambda*e_inter_1)*sqrt(spt) + (e_water_1 + e_water_2) => 68.3871
+v_sol*spt + v_inter_2*sqrt(spt) + (lambda*v_inter_1)*sqrt(spt) + (v_water_1 + v_water_1) => 59.8096
+
+lambda = 0.0
+e_sol*spt + e_inter_2*sqrt(spt) + (lambda*e_inter_1)*sqrt(spt) + (e_water_1 + e_water_2) => 70.5851
+v_sol*spt + v_inter_2*sqrt(spt) + (lambda*v_inter_1)*sqrt(spt) + (v_water_1 + v_water_1) => 17.3913
+
+lambda = 1.0
+spt = 0.5
+e_sol*spt + e_inter_2*sqrt(spt) + (lambda*e_inter_1)*sqrt(spt) + (e_water_1 + e_water_2) => 34.2909
+v_sol*spt + v_inter_2*sqrt(spt) + (lambda*v_inter_1)*sqrt(spt) + (v_water_1 + v_water_1) => 41.0147
+
+lambda = 1.0
+spt = 0.0
+e_sol*spt + e_inter_2*sqrt(spt) + (lambda*e_inter_1)*sqrt(spt) + (e_water_1 + e_water_2) => -0.001
+v_sol*spt + v_inter_2*sqrt(spt) + (lambda*v_inter_1)*sqrt(spt) + (v_water_1 + v_water_1) => 0
+
+lambda = 0.5
+spt = 0.5
+e_sol*spt + e_inter_2*sqrt(spt) + (lambda*e_inter_1)*sqrt(spt) + (e_water_1 + e_water_2) => 35.068
+v_sol*spt + v_inter_2*sqrt(spt) + (lambda*v_inter_1)*sqrt(spt) + (v_water_1 + v_water_1) => 26.0175
+
+lambda = 0.0
+spt = 0.5
+e_sol*spt + e_inter_2*sqrt(spt) + (lambda*e_inter_1)*sqrt(spt) + (e_water_1 + e_water_2) => 35.8451
+v_sol*spt + v_inter_2*sqrt(spt) + (lambda*v_inter_1)*sqrt(spt) + (v_water_1 + v_water_1) => 11.0204
